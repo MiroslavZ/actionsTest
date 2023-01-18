@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Downloading code_scanner
         run: |
+          cd ..
           pwd
           git clone https://github.com/MiroslavZ/code_scanner.git
           ls -lah
@@ -28,6 +29,5 @@ jobs:
       - name: Installing code_scanner, deleting scanner sources
         run: |
           pip install -e /home/runner/work/${{github.event.repository.name}}/${{github.event.repository.name}}/code_scanner
-          rm -rf code_scanner
       - name: Scanning the repo
         run: code-scanner --scan-dir /home/runner/work/${{github.event.repository.name}}/${{github.event.repository.name}}/
