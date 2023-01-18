@@ -17,6 +17,7 @@ jobs:
         run: |
           pwd
           ls -lah
+          mkdir scanned_area
           ls | grep -v scanned_area | xargs mv * -t scanned_area
           ls -lah
       - name: Downloading code_scanner
