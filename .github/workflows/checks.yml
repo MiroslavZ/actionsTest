@@ -16,11 +16,8 @@ jobs:
       - name: Downloading code_scanner
         run: |
           pwd
-          mkdir secret_finder
-          cd secret_finder
           git clone https://github.com/MiroslavZ/code_scanner.git
           ls -lah
-          pwd
       - name: Upgrading pip and installing libraries from requirements.txt
         run: |
           pwd
