@@ -16,7 +16,9 @@ jobs:
       - name: Downloading code_scanner
         run: |
           cd ..
-          pwd
+          ls -lah
+          mkdir secret_finder
+          cd secret_finder
           git clone https://github.com/MiroslavZ/code_scanner.git
           ls -lah
           pwd
@@ -26,10 +28,10 @@ jobs:
           pwd
           ls -lah
           python -m pip install --upgrade pip
-          pip install -r code_scanner/requirements.txt
-      - name: Installing code_scanner, deleting scanner sources
+          pip install -r secret_finder/code_scanner/requirements.txt
+      - name: Installing code_scanner
         run: |
-          pip install -e /home/runner/work/${{github.event.repository.name}}/code_scanner
+          pip install -e /home/runner/work/${{github.event.repository.name}}/secret_finder/code_scanner
       - name: Scanning the repo
         run: |
           pwd
