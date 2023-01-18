@@ -6,8 +6,6 @@ from github.Commit import Commit
 from github.PullRequest import PullRequest
 from github.Repository import Repository
 
-SOME_SECRET = 'cG2T3y67uAhxZHJt'
-
 load_dotenv()
 
 
