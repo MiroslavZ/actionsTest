@@ -19,4 +19,4 @@ def get_and_update_content():
 
 
 if __name__ == '__main__':
-    get_content()
+    get_and_update_content()
