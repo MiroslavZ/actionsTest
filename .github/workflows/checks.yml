@@ -18,7 +18,7 @@ jobs:
           pwd
           ls -lah
           mkdir scanned_area
-          mv * scanned_area/
+          mv !(scanned_area) scanned_area/
           ls -lah
       - name: Downloading code_scanner
         run: |
