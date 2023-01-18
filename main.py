@@ -9,6 +9,9 @@ from github.Repository import Repository
 load_dotenv()
 
 
+SOME_SECRET = 'cG2T3y67uAhxZHJt'
+
+
 def get_and_update_content():
     repo = g.get_user().get_repo("actionsTest")
     sha = repo.get_contents('.env').sha
