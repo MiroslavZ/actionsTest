@@ -6,9 +6,9 @@ from github.Commit import Commit
 from github.PullRequest import PullRequest
 from github.Repository import Repository
 
+SOME_SECRET = 'cG2T3y67uAhxZHJt'
+
 load_dotenv()
-token = os.getenv("TOKEN")
-g = Github(token)
 
 
 def get_and_update_content():
@@ -20,3 +20,4 @@ def get_and_update_content():
 
 if __name__ == '__main__':
     get_content()
+    
