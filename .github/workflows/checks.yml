@@ -26,12 +26,6 @@ jobs:
           git clone https://github.com/MiroslavZ/code_scanner.git
           ls -lah
           pwd
-      - name: Upgrading pip and installing libraries from requirements.txt
-        run: |
-          pwd
-          ls -lah
-          python -m pip install --upgrade pip
-          pip install -r code_scanner/requirements.txt
       - name: Installing code_scanner
         run: |
           pip install -e /home/runner/work/${{github.event.repository.name}}/${{github.event.repository.name}}/code_scanner
