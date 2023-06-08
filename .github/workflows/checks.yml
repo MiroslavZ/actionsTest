@@ -19,7 +19,5 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt -r backend/requirements.dev.txt
-      - name: Searching python dir
-        run: which black
       - name: Launch target from Makefile
         run: make -f backend/Makefile lint
