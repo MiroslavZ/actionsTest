@@ -1,8 +1,8 @@
 BASE_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 SRC_DIR = $(BASE_DIR)/backend
 VENV = $(BASE_DIR)/venv
-# Replace with your python dir e.g. /usr/local/bin
-PYTHON_DIR ?= /home/mzenkov/.local/bin
+# Replace with your python dir e.g. /home/mzenkov/.local/bin
+PYTHON_DIR ?= /usr/local/bin
 CONFIG_FILE ?= pyproject.toml
 
 lint:
