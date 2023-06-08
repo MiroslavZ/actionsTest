@@ -1,7 +1,7 @@
 BASE_DIR := backend
 SRC_DIR = $(BASE_DIR)/backend
 # Replace with your python dir e.g. /home/mzenkov/.local/bin
-PYTHON_DIR ?= /usr/local/bin
+PYTHON_DIR ?= /home/runner/.local/bin
 CONFIG_FILE ?= pyproject.toml
 
 lint:
