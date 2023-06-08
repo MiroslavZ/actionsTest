@@ -5,6 +5,7 @@ PYTHON_DIR ?= /usr/local/bin
 CONFIG_FILE ?= pyproject.toml
 
 lint:
+	which black
 	$(PYTHON_DIR)/black --check $(SRC_DIR)
 	$(PYTHON_DIR)/pflake8 --jobs 4 --statistics --show-source $(SRC_DIR)
 	$(PYTHON_DIR)/pylint --jobs 4 --rcfile=$(CONFIG_FILE) $(SRC_DIR)
