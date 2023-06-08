@@ -2,27 +2,22 @@ name: Code checks
 
 on:
   push:
-    branches: [master]
+    branches:
+      - '**'
   pull_request:
-    branches: [ master ]
+    branches:
+      - '**'
 
 jobs:
   build:
-    name: Code scanner
+    name: Checking code with linters
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Downloading code_scanner
-        run: |
-          mkdir secret_finder
-          cd secret_finder
-          git clone https://github.com/MiroslavZ/code_scanner.git
-      - name: Upgrading pip and installing libraries from requirements.txt
+      - name: Installing dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r code_scanner/requirements.txt
-      - name: Installing code_scanner
-        run: pip install -e /home/runner/work/actions_test/secret_finder/code_scanner-master
-      - name: Scanning the repo
-        run: code-scanner --scan-dir /home/runner/work/${{github.event.repository.name}}/${{github.event.repository.name}}/
+          pip install -r backend/requirements.txt backend/requirements.dev.txt
+      - name: Launch target from Makefile
+        run: make -f backend/Makefile lint
